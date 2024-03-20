@@ -807,6 +807,9 @@ app.get('/reviews', function (req, res, next) {
   );
 });
 
-app.listen(3333, function () {
-  console.log('CORS-enabled web server listening on port 3000')
-})
+const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0'; // กำหนดให้ server เปิดใช้งานบนทุก IP address
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running on http://${HOST}:${PORT}`);
+});
